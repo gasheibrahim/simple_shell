@@ -17,7 +17,7 @@ size_t get_line(char **str)
 
 	while (t2 == 0 && (i = read(STDIN_FILENO, buff, 1024 - 1)))
 	{
-		if (i == -1)
+		if ((int i) == -1)
 			return (-1);
 
 		buff[i] = '\0';
