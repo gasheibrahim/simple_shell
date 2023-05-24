@@ -9,17 +9,31 @@
 
 char *_strcat(char *dest, char *src)
 {
-	int l = 0;
+	int l1 = 0;
+	int l2 = 0;
+	int len = 0;
 	int i = 0;
 
-	while (dest[l])
-		l++;
+	while (dest[l1])
+	{
+		l1++;
+		len++;
+	}
+	while (src[l2])
+	{
+		l2++;
+		len++;
+	}
+
+	dest = _realloc(dest, l1, sizeof(char) * len + 1);
 
 	while (src[i])
 	{
-		dest[l + i] = src[i];
+		dest[l1] = src[i];
+		l1++;
 		i++;
 	}
-	dest[l + i] = '\0';
+	dest[l1] = '\0';
+
 	return (dest);
 }
